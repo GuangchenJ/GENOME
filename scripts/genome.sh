@@ -2,8 +2,9 @@ export TOKENIZERS_PARALLELISM=true
 
 N=10
 ITERS=10
-ROOT_DIR="input your root dir here"
-MODEL_NAME="input your model name here"
+
+MODEL_PATH="input your model name here"
+LORA_PATH="input your lora path here"
 
 TASKS="mmlupro"
 TEST_TASKS='mmlupro'
@@ -14,13 +15,13 @@ CROSS_METHOD=linear
 SEEDS=(41 42 47 53 3407)
 
 for SEED in "${SEEDS[@]}"; do
-    echo "Running GA with seed: $SEED"
+    echo "Running GENOME with seed: $SEED"
     python run_ga.py \
         --tasks $TASKS \
         --test_tasks $TEST_TASKS \
         --task_weights $WEIGHTS \
-        --model_path $ROOT_DIR/models/$MODEL_NAME \
-        --lora_dir $ROOT_DIR/lora/$MODEL_NAME/lora \
+        --model_path $MODEL_PATH \
+        --lora_dir $LORA_PATH \
         --population_size $N \
         --combine_method $COMBINE_METHOD \
         --cross_method $CROSS_METHOD \

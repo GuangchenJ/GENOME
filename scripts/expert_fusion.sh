@@ -3,6 +3,7 @@ export TOKENIZERS_PARALLELISM=true
 ITERS=50
 ROOT_DIR="input your root dir here"
 MODEL_NAME=gemma-2-2b-it
+LORA_PATH="input your lora path here"
 
 TASKS='flores101'
 TEST_TASKS='flores101'
@@ -20,7 +21,7 @@ for SEED in "${SEEDS[@]}"; do
         --test_tasks $TEST_TASKS \
         --task_weights $WEIGHTS \
         --model_path /$ROOT_DIR/models/$MODEL_NAME \
-        --lora_dir /$ROOT_DIR/lora/$MODEL_NAME/lora \
+        --lora_dir $LORA_PATH \
         --seed $SEED \
         --early_stop_iter 5 \
         --plot_enabled \

@@ -1,7 +1,7 @@
 export TOKENIZERS_PARALLELISM=true
 
-ROOT_DIR="input your root dir here"
-MODEL_NAME="input your model name here"
+MODEL_PATH="input your model name here"
+LORA_PATH="input your lora path here"
 
 TASKS="drop"
 TEST_TASKS="drop"
@@ -21,8 +21,8 @@ SEEDS=(41 42 47 53 3407)
 for SEED in "${SEEDS[@]}"; do
     echo "Running GenomePlus with seed: $SEED"
     python run_genomeplus.py \
-        --model_path $ROOT_DIR/models/$MODEL_NAME \
-        --lora_dir $ROOT_DIR/lora/$MODEL_NAME/lora \
+        --model_path $MODEL_PATH \
+        --lora_dir $LORA_PATH \
         --tasks $TASKS \
         --test_tasks $TEST_TASKS \
         --task_weights $WEIGHTS \
