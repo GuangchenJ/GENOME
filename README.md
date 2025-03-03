@@ -1,7 +1,25 @@
 # GENOME(+)
 
-A population-based evolution of Large Language Models.
+> **GENOME(+)** is a framework for population-based evolution of Large Language Models (LLMs), inspired by natural evolution. Starting with a population of parent LLMs, the framework enables model evolution through five key operations:
 
+### Key Operations
+- **Crossover**: Merges weights of different parent LLMs to create offspring
+- **Mutation**: Introduces controlled random changes to foster diversity
+- **Selection**: Prioritizes high-performing models
+- **Succession**: Transfers learned experience from parents to offspring
+- **Ensemble**: Combines the strengths of multiple evolved models for robust predictions
+
+---
+
+🌟 **Key Features**:
+- **Rapid adaptation** with only 200 samples per new task
+- **No gradients** required for evolution
+- **Up to 54.8% accuracy gains** over initial population (on DROP dataset)
+- **Effective scaling** with populations up to 40 LLMs
+- **Zero-shot generalization** to unseen tasks
+- **Runs on a single 4090 GPU** (24GB memory)
+
+![GENOME+ Architecture](assets/genome.png)
 
 ## 📦 Installation
 
